@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div.content
+        h1 Opret IKEA Trådfri pære
+        .formContainer
+            form(action='/api/devices', method='post')
+                h4 bulb_id:
+                input(type='text', name='bulb_id', value='')
+                h4 hardware_type_number:
+                input(type='text', name='hardware_type_number', value='')
+                h4 software_version:
+                input(type='text', name='software_version', value='')
+                h4 status_bool:
+                input(type='text', name='status_bool', value='')
+                h4 nominal_consumption:
+                input(type='text', name='nominal_consumption', value='')
+                h4 actual_consumption:
+                input(type='text', name='actual_consumption', value='')
+                h4 light_intensity:
+                input(type='text', name='light_intensity', value='')
+                h4 color:
+                input(type='text', name='color', value='')
+                input(type='submit', value='Opret')
+

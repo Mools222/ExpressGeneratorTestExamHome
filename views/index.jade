@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    div.content
+        h1=title
+        p Velkommen til #{title}
+        br
+        hr
+        br
+        h2 Konverter watt til kilowatt
+        .formContainer
+            form(action='/', method='post')
+                h4 Watt:
+                input(type='text', name='watt', value=(watt ? watt : ''))
+                h4 Kilowatt:
+                // Removed the "name" attribute to not send anything from this field. Also added the "readonly" attribute to make it read only
+                input(type='text', value=(kilowatt ? kilowatt : ''), readonly)
+                br
+                input(type='submit', value='Konverter')
+
+

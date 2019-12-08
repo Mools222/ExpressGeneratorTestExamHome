@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='description', content='Eksamensopgave')
+        meta(name='keywords', content='eksamen, html, css, javascript')
+        meta(name='author', content='Morten Olsen')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    // Header
+    header
+        h1 IKEA Trådfri
+        p Fremtidens Elpære
+    // Navbar
+    - var navbar = { 'Index': '/', 'Pure HTML Table': '/table', 'Form': '/form', 'Devices via DB': '/devices', 'Devices via fetch': '/devicesFetch', 'Devices as JSON': '/api/devices'};
+    ul
+        each val, key in navbar
+            li
+                a(href=val)= key
+    // Content
+    block content
+    // Footer
+    footer
+        p Copyright 1989-2019 by Morten Olsen. All Rights Reserved.
+        p#dateTime Test
+    script(src='/javascripts/scripts.js')
+

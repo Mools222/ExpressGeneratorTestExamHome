@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    div.content
+        h1 IKEA Trådfri pærer
+        table
+            thead
+                tr
+                    th bulb_id
+                    th hardware_type_number
+                    th software_version
+                    th status_bool
+                    th nominal_consumption
+                    th actual_consumption
+                    th light_intensity
+                    th color
+                tbody
+                    each item in items
+                        tr
+                            td #{item.bulb_id}
+                            td #{item.hardware_type_number}
+                            td #{item.software_version}
+                            td #{item.status_bool}
+                            td #{item.nominal_consumption}
+                            td #{item.actual_consumption}
+                            td #{item.light_intensity}
+                            td #{item.color}
+
+
+        br
+
+        table
+            thead
+                tr
+                    each item, index in items[0]
+                        th= index
+                tbody
+                    each item in items
+                        tr
+                            td #{item.bulb_id}
+                            td #{item.hardware_type_number}
+                            td #{item.software_version}
+                            td #{item.status_bool}
+                            td #{item.nominal_consumption}
+                            td #{item.actual_consumption}
+                            td #{item.light_intensity}
+                            td #{item.color}
+
+        br
+
+        hr
+
+        p= items
+        p= items[0]
+
+        hr
+
+        // "items" = array of objects. "bulb" = object
+        each bulb in items
+            each value, key in bulb
+                pr= key + " : " + value
+                br
+            hr
+
